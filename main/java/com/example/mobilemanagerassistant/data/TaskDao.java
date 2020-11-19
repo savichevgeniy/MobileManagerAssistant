@@ -1,4 +1,4 @@
-package com.example.mobilemanagerassistant.model;
+package com.example.mobilemanagerassistant.data;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -7,19 +7,21 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.example.mobilemanagerassistant.model.Task;
+
 import java.util.List;
 
 @Dao
 public interface TaskDao {
 
     @Insert
-    void insert();
+    void insertTask();
 
     @Update
-    void update();
+    void updateTask();
 
     @Delete
-    void delete();
+    void deleteTask();
 
     @Query(value = "SELECT * FROM tasks_table")
     LiveData<List<Task>> getAllTasks();

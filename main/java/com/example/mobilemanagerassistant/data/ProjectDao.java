@@ -1,4 +1,4 @@
-package com.example.mobilemanagerassistant.model;
+package com.example.mobilemanagerassistant.data;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -7,19 +7,21 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.example.mobilemanagerassistant.model.Project;
+
 import java.util.List;
 
 @Dao
 public interface ProjectDao {
 
     @Insert
-    void insert();
+    void insertProject();
 
     @Update
-    void update();
+    void updateProject();
 
     @Delete
-    void delete();
+    void deleteProject();
 
     @Query(value = "SELECT * FROM projects_table")
     LiveData<List<Project>> getAllProjects();

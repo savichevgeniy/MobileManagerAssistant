@@ -1,4 +1,4 @@
-package com.example.mobilemanagerassistant.model;
+package com.example.mobilemanagerassistant.data;
 
 import android.content.Context;
 import android.os.AsyncTask;
@@ -8,6 +8,9 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
+
+import com.example.mobilemanagerassistant.model.Project;
+import com.example.mobilemanagerassistant.model.Task;
 
 @Database(entities = {Project.class, Task.class}, version = 1)
 public  abstract class ProjectsDb extends RoomDatabase {
