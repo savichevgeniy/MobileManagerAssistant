@@ -15,13 +15,13 @@ import java.util.List;
 public interface ProjectDao {
 
     @Insert
-    void insertProject();
+    void insertProject(Project project);
 
     @Update
-    void updateProject();
+    void updateProject(Project project);
 
     @Delete
-    void deleteProject();
+    void deleteProject(Project project);
 
     @Query(value = "SELECT * FROM projects_table")
     LiveData<List<Project>> getAllProjects();
