@@ -11,14 +11,16 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.example.mobilemanagerassistant.model.Project;
 import com.example.mobilemanagerassistant.model.Task;
+import com.example.mobilemanagerassistant.model.User;
 
-@Database(entities = {Project.class, Task.class}, version = 1)
+@Database(entities = {Project.class, Task.class, User.class}, version = 1)
 public  abstract class ProjectsDb extends RoomDatabase {
 
     private static ProjectsDb projectsDb;
 
     public abstract ProjectDao getProjectDao();
     public abstract TaskDao getTaskDao();
+    public abstract UserDao getUserDao();
 
     public static synchronized ProjectsDb getProjectsDb(Context context) {
 
@@ -48,18 +50,19 @@ public  abstract class ProjectsDb extends RoomDatabase {
 
         private ProjectDao projectDao;
         private TaskDao taskDao;
+        private UserDao userDao;
 
         public InitialDataAsyncTask(ProjectsDb database) {
             projectDao = database.getProjectDao();
             taskDao = database.getTaskDao();
+            userDao = database.getUserDao();
         }
 
 
 
         @Override
         protected Void doInBackground(Void... voids) {
-            projectDao.getAllProjects();
-            taskDao.getAllTasks();
+
             return null;
         }
     }

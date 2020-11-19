@@ -9,8 +9,9 @@ import androidx.room.PrimaryKey;
 
 import java.util.Date;
 
-@Entity(tableName = "tasks_table", foreignKeys = @ForeignKey(entity = Project.class,
-        parentColumns = "idProject", childColumns = "idTask", onDelete = ForeignKey.CASCADE))
+@Entity(tableName = "tasks_table", foreignKeys =
+        @ForeignKey(entity = Project.class, parentColumns = "idProject",
+                childColumns = "idProjectInTask,", onDelete = ForeignKey.CASCADE))
 public class Task extends BaseObservable {
 
     @PrimaryKey(autoGenerate = true)
@@ -26,11 +27,16 @@ public class Task extends BaseObservable {
     @ColumnInfo(name = "deadline_task")
     private Date deadlineTask;
 
-    public Task(int idTask, String nameTask, String nameEmployee, Date deadlineTask) {
+    @ColumnInfo(name = "id_project_in_Task")
+    private int idProjectInTask;
+
+    public Task(int idTask, String nameTask, String nameEmployee,
+                Date deadlineTask, int idProjectInTask, int idUserInTask) {
         this.idTask = idTask;
         this.nameTask = nameTask;
         this.nameEmployee = nameEmployee;
         this.deadlineTask = deadlineTask;
+        this.idProjectInTask = idProjectInTask;
     }
 
     @Bindable
@@ -67,5 +73,14 @@ public class Task extends BaseObservable {
 
     public void setDeadlineTask(Date deadlineTask) {
         this.deadlineTask = deadlineTask;
+    }
+
+    @Bindable
+    public int getIdProjectInTask() {
+        return idProjectInTask;
+    }
+
+    public void setIdProjectInTask(int idProjectInTask) {
+        this.idProjectInTask = idProjectInTask;
     }
 }
