@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".DashboardFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#344955"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/projects_button"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="150dp"
+            android:text="@string/show_projects"
+            android:backgroundTint="#4A6572"
+            android:layout_marginHorizontal="10dp"
+            android:textColor="#F9AA33"/>
+
+        <Button
+            android:id="@+id/tasks_button"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/show_tasks"
+            android:backgroundTint="#4A6572"
+            android:layout_marginHorizontal="10dp"
+            android:textColor="#F9AA33"/>
+
+        <Button
+            android:id="@+id/employee_button"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/show_tasks"
+            android:backgroundTint="#4A6572"
+            android:layout_marginHorizontal="10dp"
+            android:textColor="#F9AA33"/>
+    </LinearLayout>
+
+
+
+
+
+
+</layout>

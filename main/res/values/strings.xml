@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">MobileManagerAssistant</string>
+    <string name="app_name">ManagerAssistant</string>
+
+    <string name="home">home</string>
+    <string name="notifications">notifications</string>
+    <string name="account">account</string>
+    <string name="dashboard">dashboard</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="show_projects">show projects</string>
+    <string name="show_tasks">show tasks</string>
+    <string name="personal_board">personal board</string>
+
 </resources>

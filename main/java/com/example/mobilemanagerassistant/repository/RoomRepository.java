@@ -1,16 +1,19 @@
-package com.example.mobilemanagerassistant.data;
+package com.example.mobilemanagerassistant.repository;
 
 import android.app.Application;
 import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
+import com.example.mobilemanagerassistant.data.ProjectDao;
+import com.example.mobilemanagerassistant.data.ProjectsDb;
+import com.example.mobilemanagerassistant.data.TaskDao;
 import com.example.mobilemanagerassistant.model.Project;
 import com.example.mobilemanagerassistant.model.Task;
 
 import java.util.List;
 
-public class AppRepository {
+public class RoomRepository {
 
     private ProjectDao projectDao;
     private TaskDao taskDao;
@@ -18,7 +21,7 @@ public class AppRepository {
     private LiveData<List<Project>> projects;
     private LiveData<List<Task>> tasks;
 
-    public AppRepository(Application application) {
+    public RoomRepository(Application application) {
 
         ProjectsDb database = ProjectsDb.getProjectsDb(application);
         projectDao = database.getProjectDao();

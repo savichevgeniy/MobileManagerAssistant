@@ -2,16 +2,18 @@ package com.example.mobilemanagerassistant.model;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
+import androidx.databinding.library.baseAdapters.BR;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-import java.util.Date;
+
 
 @Entity(tableName = "tasks_table", foreignKeys =
-        @ForeignKey(entity = Project.class, parentColumns = "idProject",
-                childColumns = "idProjectInTask,", onDelete = ForeignKey.CASCADE))
+        @ForeignKey(entity = Project.class, parentColumns = "id",
+                childColumns = "id_project,", onDelete = ForeignKey.CASCADE))
 public class Task extends BaseObservable {
 
     @PrimaryKey(autoGenerate = true)
@@ -24,19 +26,27 @@ public class Task extends BaseObservable {
     @ColumnInfo(name = "name_employee")
     private String nameEmployee;
 
-    @ColumnInfo(name = "deadline_task")
-    private Date deadlineTask;
+    @ColumnInfo(name = "position_employee")
+    private String positionEmployee;
 
-    @ColumnInfo(name = "id_project_in_Task")
-    private int idProjectInTask;
+    @ColumnInfo(name = "deadline_task")
+    private String deadlineTask;
+
+    @ColumnInfo(name = "id_project")
+    private int idProject;
+
+    @Ignore
+    public Task() {
+    }
 
     public Task(int idTask, String nameTask, String nameEmployee,
-                Date deadlineTask, int idProjectInTask, int idUserInTask) {
+                String deadlineTask, int idProject, String positionEmployee) {
         this.idTask = idTask;
         this.nameTask = nameTask;
         this.nameEmployee = nameEmployee;
+        this.positionEmployee = positionEmployee;
         this.deadlineTask = deadlineTask;
-        this.idProjectInTask = idProjectInTask;
+        this.idProject = idProject;
     }
 
     @Bindable
@@ -46,6 +56,7 @@ public class Task extends BaseObservable {
 
     public void setIdTask(int idTask) {
         this.idTask = idTask;
+        notifyPropertyChanged(BR.idTask);
     }
 
     @Bindable
@@ -55,6 +66,7 @@ public class Task extends BaseObservable {
 
     public void setNameTask(String nameTask) {
         this.nameTask = nameTask;
+        notifyPropertyChanged(BR.nameTask);
     }
 
     @Bindable
@@ -64,23 +76,37 @@ public class Task extends BaseObservable {
 
     public void setNameEmployee(String nameEmployee) {
         this.nameEmployee = nameEmployee;
-    }
-
-   @Bindable
-    public Date getDeadlineTask() {
-        return deadlineTask;
-    }
-
-    public void setDeadlineTask(Date deadlineTask) {
-        this.deadlineTask = deadlineTask;
+        notifyPropertyChanged(BR.nameEmployee);
     }
 
     @Bindable
-    public int getIdProjectInTask() {
-        return idProjectInTask;
+    public String getPositionEmployee() {
+        return positionEmployee;
     }
 
-    public void setIdProjectInTask(int idProjectInTask) {
-        this.idProjectInTask = idProjectInTask;
+    public void setPositionEmployee(String positionEmployee) {
+        this.positionEmployee = positionEmployee;
+        notifyPropertyChanged(BR.positionEmployee);
     }
+
+    @Bindable
+    public String getDeadlineTask() {
+        return deadlineTask;
+    }
+
+    public void setDeadlineTask(String deadlineTask) {
+        this.deadlineTask = deadlineTask;
+        notifyPropertyChanged(BR.deadlineTask);
+    }
+
+    @Bindable
+    public int getIdProject() {
+        return idProject;
+    }
+
+    public void setIdProject(int idProjectInTask) {
+        this.idProject = idProjectInTask;
+        notifyPropertyChanged(BR.idProject);
+    }
+
 }

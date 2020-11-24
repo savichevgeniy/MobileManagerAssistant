@@ -2,18 +2,19 @@ package com.example.mobilemanagerassistant.model;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
+import androidx.databinding.library.baseAdapters.BR;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-import java.util.Date;
+
 
 @Entity(tableName = "projects_table")
 public class Project extends BaseObservable {
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id_Project")
-    private int idProject;
+    private int id;
 
     @ColumnInfo(name = "name_project")
     private String NameProject;
@@ -22,22 +23,27 @@ public class Project extends BaseObservable {
     private String customerProject;
 
     @ColumnInfo(name = "deadline_project")
-    private Date deadlineProject;
+    private String deadlineProject;
 
-    public Project(int idProject, String nameProject, String customerProject, Date deadlineProject) {
-        this.idProject = idProject;
+
+
+    public Project() {
+    }
+
+    public Project(int idProject, String nameProject, String customerProject, String deadlineProject) {
+        this.id = idProject;
         this.NameProject = nameProject;
         this.customerProject = customerProject;
         this.deadlineProject = deadlineProject;
     }
 
     @Bindable
-    public int getIdProject() {
-        return idProject;
+    public int getId() {
+        return id;
     }
 
-    public void setIdProject(int idProject) {
-        this.idProject = idProject;
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Bindable
@@ -47,6 +53,7 @@ public class Project extends BaseObservable {
 
     public void setNameProject(String nameProject) {
         NameProject = nameProject;
+        notifyPropertyChanged(BR.nameProject);
     }
 
     @Bindable
@@ -56,14 +63,16 @@ public class Project extends BaseObservable {
 
     public void setCustomerProject(String customerProject) {
         this.customerProject = customerProject;
+        notifyPropertyChanged(BR.customerProject);
     }
 
     @Bindable
-    public Date getDeadlineProject() {
+    public String getDeadlineProject() {
         return deadlineProject;
     }
 
-    public void setDeadlineProject(Date deadlineProject) {
+    public void setDeadlineProject(String deadlineProject) {
         this.deadlineProject = deadlineProject;
+        notifyPropertyChanged(BR.deadlineProject);
     }
 }
