@@ -1,4 +1,4 @@
-package com.example.mobilemanagerassistant;
+package com.example.mobilemanagerassistant.view;
 
 import android.os.Bundle;
 

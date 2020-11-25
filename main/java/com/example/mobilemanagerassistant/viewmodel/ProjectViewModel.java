@@ -14,7 +14,7 @@ import java.util.List;
 public class ProjectViewModel extends AndroidViewModel {
     
     private RoomRepository roomRepository;
-    private LiveData<List<Project>> project;
+    private LiveData<List<Project>> projectListLiveData;
     
     public ProjectViewModel(@NonNull Application application) {
         super(application);
@@ -22,14 +22,13 @@ public class ProjectViewModel extends AndroidViewModel {
     }
 
     public LiveData<List<Project>> getProject() {
-        project = roomRepository.getProjects();
-        return project;
+        projectListLiveData = roomRepository.getProjects();
+        return projectListLiveData;
     }
 
     public void addNewProject(Project project) {
         roomRepository.insertProject(project);
     }
-
     public void updateProject(Project project) {
         roomRepository.updateProject(project);
     }

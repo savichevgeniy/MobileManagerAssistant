@@ -2,7 +2,7 @@ package com.example.mobilemanagerassistant.model;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
-import androidx.databinding.library.baseAdapters.BR;
+import androidx.databinding.library.baseAdaptersTask.BR;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
