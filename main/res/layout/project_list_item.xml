@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <data>
+        <variable
+            name="project"
+            type="com.example.mobilemanagerassistant.model.Project" />
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_margin="6dp"
+        app:cardCornerRadius="6dp"
+        android:background="#4A6572">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#344955">
+
+            <TextView
+                android:id="@+id/nameProjectTextView"
+                android:text="@{project.nameProject}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="#F9AA33"/>
+
+            <TextView
+                android:id="@+id/customerProjectTextView"
+                android:text="@{project.customerProject}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="#F9AA33"/>
+
+            <TextView
+                android:id="@+id/deadlineProjectTextView"
+                android:text="@{project.deadlineProject}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="#F9AA33"/>
+
+
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
