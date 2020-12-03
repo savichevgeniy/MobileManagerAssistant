@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MobileManagerAssistant">
+        <activity android:name=".view.AddEditProjectActivity"></activity>
         <activity
             android:name=".view.ProjectActivity"
             android:label="@string/title_activity_project"
-            android:theme="@style/Theme.MobileManagerAssistant.NoActionBar"></activity>
+            android:theme="@style/Theme.MobileManagerAssistant.NoActionBar" />
         <activity android:name=".view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

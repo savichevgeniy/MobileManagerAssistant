@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="project"
+            type="com.example.mobilemanagerassistant.model.Project" />
+
+        <variable
+            name="clickHandlers"
+            type="com.example.mobilemanagerassistant.view.AddEditProjectActivity.AddEditProjectClickHandlers" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#232F34"
+        android:orientation="vertical"
+        tools:context=".view.AddEditProjectActivity">
+
+        <TextView
+            android:id="@+id/nameProjectTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="26dp"
+            android:text="@string/name_project"
+            android:textColor="#F9AA33"
+            android:textSize="26sp" />
+
+        <EditText
+            android:id="@+id/nameProjectEditText"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginTop="6dp"
+            android:background="#4A6572"
+            android:hint="Enter name project"
+            android:textColor="#F9AA33"
+            android:textSize="26sp" />
+
+
+        <TextView
+            android:id="@+id/customerProjectTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="26dp"
+            android:text="@string/customer_project"
+            android:textColor="#F9AA33"
+            android:textSize="26sp" />
+
+        <EditText
+            android:id="@+id/customerProjectEditText"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginTop="6dp"
+            android:background="#4A6572"
+            android:hint="Enter name project"
+            android:textColor="#F9AA33"
+            android:textSize="26sp" />
+
+        <TextView
+            android:id="@+id/deadlineProjectTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="26dp"
+            android:text="@string/deadline_project"
+            android:textColor="#F9AA33"
+            android:textSize="26sp" />
+
+        <EditText
+            android:id="@+id/deadlineProjectEditText"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginTop="6dp"
+            android:background="#4A6572"
+            android:hint="Enter deadline project"
+            android:inputType="date"
+            android:textColor="#F9AA33"
+            android:textSize="26sp" />
+
+
+        <Button
+            android:id="@+id/okButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="106dp"
+            android:layout_marginTop="256dp"
+            android:backgroundTint="#4A6572"
+            android:onClick="@{clickHandlers::onOkButtonClicked}"
+            android:text="OK"
+            android:textColor="#0DEF05" />
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="106dp"
+            android:layout_marginTop="6dp"
+            android:backgroundTint="#4A6572"
+            android:onClick="@{clickHandlers::onCancelButtonClicked}"
+            android:text="Cancel"
+            android:textColor="#F30606" />
+
+
+    </LinearLayout>
+</layout>

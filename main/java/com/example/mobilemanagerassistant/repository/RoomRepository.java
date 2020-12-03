@@ -92,6 +92,10 @@ public class RoomRepository {
     }
 
     //get and CRUD tasks
+    public LiveData<List<Task>> getTaskProject(int idProject){
+        return taskDao.getProjectTask(idProject);
+    }
+
     public LiveData<List<Task>> getTasks(){
         return taskDao.getAllTasks();
     }

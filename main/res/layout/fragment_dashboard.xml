@@ -3,6 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".view.DashboardFragment">
 
+    <data>
+        <variable
+            name="clickHandlers"
+            type="com.example.mobilemanagerassistant.view.DashboardFragment.DashboardFragmentClickHandlers" />
+    </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -46,6 +52,7 @@
 
         <Button
             android:id="@+id/employee_button"
+            android:onClick="@{clickHandlers::onOpenProjectPageClickHandlers}"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginTop="30dp"

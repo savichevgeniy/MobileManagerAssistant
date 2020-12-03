@@ -27,6 +27,11 @@ public class TaskViewModel extends AndroidViewModel {
         return  taskListLiveData;
     }
 
+    public LiveData<List<Task>> getListLiveDataTaskInProject(int idProject){
+        taskListLiveData = roomRepository.getTaskProject(idProject);
+        return  taskListLiveData;
+    }
+
     public void addNewTask(Task task) {
         roomRepository.insertTask(task);
     }

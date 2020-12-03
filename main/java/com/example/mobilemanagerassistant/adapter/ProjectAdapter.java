@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ProjectViewHolder> {
 
-    private AdapterView.OnItemClickListener onItemClickListener;
+    private OnItemClickListener onItemClickListener;
     private ArrayList<Project> projectArrayList = new ArrayList<>();
 
     @NonNull
@@ -52,7 +52,7 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ProjectV
                     int position = getAdapterPosition();
 
                     if (onItemClickListener != null && position != RecyclerView.NO_POSITION) {
-                        OnItemClickListener.onItemClick(projectArrayList.get(position));
+                        onItemClickListener.onItemClick(projectArrayList.get(position));
                     }
                 }
             });
@@ -60,12 +60,11 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ProjectV
     }
 
     public interface OnItemClickListener {
-        static void onItemClick(Project project) {
-        }
+         void onItemClick(Project project);
     }
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
-        this.onItemClickListener = (AdapterView.OnItemClickListener) onItemClickListener;
+        this.onItemClickListener =  onItemClickListener;
     }
 
     public void setProjectArrayList(ArrayList<Project> projectArrayList) {

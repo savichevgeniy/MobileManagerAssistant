@@ -6,8 +6,8 @@
     <data>
 
         <variable
-            name="buttonHandler"
-            type="com.example.mobilemanagerassistant.view.ProjectActivity.ProjectActivityButtonHandler" />
+            name="clickHandlers"
+            type="com.example.mobilemanagerassistant.view.ProjectActivity.ProjectActivityClickHandlers" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -36,7 +36,7 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
-            android:onClick="@{buttonHandler::OnButtonClicked}"
+            android:onClick="@{clickHandlers::onFabClicked}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
